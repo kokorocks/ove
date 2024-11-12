@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 100px;
+            color: #e74c3c;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .suggestions {
+            margin-top: 30px;
+            text-align: left;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>404</h1>
+    <p>Oops! It looks like the page you're looking for isn't available.</p>
+
+    <p>It seems like you were trying to access: <strong id="requested-url"></strong></p>
+
+    <div class="suggestions">
+        <p>Here are some helpful options:</p>
+        <ul>
+            <li><a href="/" class="button">Go to Home Page</a></li>
+            <li><a href="/contact" class="button">Contact Us</a></li>
+            <li><a href="/site-map" class="button">View Site Map</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Get the full URL
+        const fullUrl = window.location.href;
+
+        // Extract the path from the URL (excluding the domain part)
+        const path = window.location.pathname;
+
+        // Display only the path (route) without the domain
+        document.getElementById("requested-url").textContent = path;
+
+        // Optionally, log the full URL for debugging (you can remove this in production)
+        console.log("Full URL: " + fullUrl);
+    </script>
+
+</body>
+</html>
